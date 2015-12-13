@@ -18,7 +18,7 @@ class HomePageTest(TestCase):
         expected_html = render_to_string('home.html')
         self.assertEqual(response.content.decode(), expected_html)
 
-        
+
 class ListAndItemModelsTest(TestCase):
 
     def test_saving_and_retrieving_items(self):
@@ -46,9 +46,9 @@ class ListAndItemModelsTest(TestCase):
         self.assertEqual(first_saved_item.text, 'The first (ever) list item')
         self.assertEqual(first_saved_item.list, list_)
         self.assertEqual(second_saved_item.text, 'Item the second')
-        self.assertEqual(second_saved_item.list, list_) 
+        self.assertEqual(second_saved_item.list, list_)
 
-    
+
 class ListViewTest(TestCase):
 
     def test_uses_list_template(self):
@@ -84,7 +84,7 @@ class NewListTest(TestCase):
         self.client.post(
             '/lists/new',
             data={'item_text': 'A new list item'}
-        )    
+        )
         self.assertEqual(Item.objects.count(), 1)
         new_item = Item.objects.first()
         self.assertEqual(new_item.text, 'A new list item')
@@ -113,7 +113,6 @@ class NewItemTest(TestCase):
         new_item = Item.objects.first()
         self.assertEqual(new_item.text, 'A new item for an existing list')
         self.assertEqual(new_item.list, correct_list)
-
 
     def test_redirects_to_list_view(self):
         other_list = List.objects.create()
