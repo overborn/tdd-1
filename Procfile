@@ -1,1 +1,1 @@
-web: gunicorn tdd-1.wsgi --log-file -
+web: gunicorn superlists.wsgi --log-file -
