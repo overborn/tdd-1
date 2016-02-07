@@ -140,3 +140,9 @@ if HEROKU:
 
     # Allow all host headers
     ALLOWED_HOSTS = ['*']
+
+
+AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKENDS = (
+    'accounts.authentication.PersonaAuthenticationBackend',
+)
