@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'lists',
     'accounts',
+    'functional_tests',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -124,6 +125,12 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['console'],
+        },
+        'accounts': {
+            'handlers': ['console']
+        },
+        'lists': {
+            'handlers': ['console']
         },
     },
     'root': {'level': 'INFO'},
